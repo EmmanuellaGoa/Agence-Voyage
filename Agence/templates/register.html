@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container bg-im" >
+    <div class="row shadow" style="margin-top :150px ; ">
+        <div class="col-lg-6 shadow p-4">
+            <h3 class="text-center alert alert-info">Créer votre compte</h3>
+            <form action="" method="POST">
+               <!--proteger ls données du formulaire-->
+               {% csrf_token %}
+               <!--{{form.as_p}} : afficher le formulaire sous form d paragraph-->
+               {{form.as_p}}
+
+                <div class="mb-3">
+                    <label for="exampleInputText1" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp" name="username">
+            
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary" value="CreerCompte">S'inscrire</button>
+              </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://th.bing.com/th/id/R.7bb6859bbff95e597d47a5427e2d4df7?rik=ucjcSGqmxkEu4w&pid=ImgRaw&r=0" alt="" class="img-fluid img-responsive">
+        </div>
+    </div>
+</div>
+{% endblock %}
